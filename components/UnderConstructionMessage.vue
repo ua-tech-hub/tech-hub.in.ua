@@ -8,8 +8,19 @@
 
     <p>
       <small>
-        <a href="mailto:kozackunisoft@gmail.com">Зворотній зв́’язок</a>
+        <git-hub-link href="https://github.com/ua-tech-hub/tech-hub.in.ua">Зворотній зв'язок</git-hub-link>
       </small>
     </p>
   </main>
 </template>
+
+<style scoped>
+[href="https://github.com/ua-tech-hub/tech-hub.in.ua"] {
+  font-size: 0.8em;
+  color: inherit;
+}
+[href="https://github.com/ua-tech-hub/tech-hub.in.ua"]:not(:hover):not(:focus) {
+  opacity: 0.5;
+  text-decoration: none;
+}
+</style>
