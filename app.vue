@@ -7,6 +7,18 @@
     <Title>
       🇺🇦 Хаб — Сайт в розробці
     </Title>
+    <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></Script>
+    <Script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </Script>
   </Head>
 
   <under-construction-message/>
