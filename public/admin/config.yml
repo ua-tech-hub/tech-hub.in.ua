@@ -4,6 +4,7 @@ backend:
   branch: main
   open_authoring: true
 
+locale: uk
 publish_mode: editorial_workflow
 
 media_folder: "public/images/uploads" # Media files will be stored in the repo under static/images/uploads
@@ -12,6 +13,7 @@ public_folder: "/images/uploads" # The src attribute for uploaded media will beg
 collections:
   - name: article
     label: Статті
+    label_singular: Статтю
     folder: content/articles
     create: true
     slug: "{{slug}}"
