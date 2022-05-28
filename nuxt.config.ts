@@ -1,13 +1,16 @@
-import { defineNuxtConfig } from 'nuxt'
+import { defineNuxtConfig } from 'nuxt';
 
 export default defineNuxtConfig({
-    modules: [
-        '@nuxt/content'
+  modules: [
+    '@nuxt/content',
+  ],
+  css: [
+    'assets/styles/global.css',
+  ],
+  content: {
+    ignores: [
+      'LICENSE'
     ],
-    css: [
-        'assets/styles/global.css'
-    ],
-    content: {
-        // https://content.nuxtjs.org/api/configuration
-    }
-})
+    // https://content.nuxtjs.org/api/configuration
+  },
+});
