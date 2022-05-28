@@ -1,12 +1,8 @@
 ---
 title: Как я закрыл трехлетний issue в TypeScript
-description:
 date: 2020-06-21
-layout: layouts/post.njk
 tags:
-
 - TypeScript
-
 ---
 ![](https://habrastorage.org/webt/iw/u6/24/iwu624zqqotvo05frkqgtk1wqjq.jpeg) Всё началось с моего желания описать
 структуру сообщений между web worker'ами. К сожалению, на тот момент встроенные возможности TypeScript этого не

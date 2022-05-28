@@ -6,8 +6,8 @@ export default defineNuxtConfig({
     ],
     css: [
         'assets/styles/global.css'
-    ]
-    // content: {
-    //     // https://content.nuxtjs.org/api/configuration
-    // }
+    ],
+    content: {
+        // https://content.nuxtjs.org/api/configuration
+    }
 })

@@ -2,16 +2,15 @@
 import { definePageMeta, queryContent, ref, useAsyncData, watch } from "#imports";
 
 definePageMeta({
-  layout: 'base-layout'
-})
-
+  layout: 'base-layout',
+});
 
 
 const {data: articles} = await useAsyncData(
-    'home',
-    () => queryContent('/')
-        .only(['title', 'description', '_path'])
-        .find(),
+  'home',
+  () => queryContent('/articles')
+    .only(['title', 'description', '_path'])
+    .find(),
 );
 
 </script>
@@ -19,11 +18,11 @@ const {data: articles} = await useAsyncData(
 <template>
   <main>
     <article
-        v-for="article of articles"
-        :key="article._path"
+      v-for="article of articles"
+      :key="article._path"
     >
-      <h2>{{article.title}}</h2>
-      <div v-if="article.description">{{article.description}}</div>
+      <h2>{{ article.title }}</h2>
+      <div v-if="article.description">{{ article.description }}</div>
       <nuxt-link :to="article._path">go</nuxt-link>
     </article>
   </main>

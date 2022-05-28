@@ -1,8 +1,6 @@
 ---
 title: Современная архитектура Electron приложений в 2021
-description:
 date: 2021-09-16
-layout: layouts/post.njk
 tags:
 - Electron
 ---
