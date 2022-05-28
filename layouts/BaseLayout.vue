@@ -8,6 +8,11 @@
 </template>
 
 <style scoped>
+
+.base-layout {
+  min-height: 100vh;
+}
+
 @media (min-width: 800px) {
   .base-layout {
     display: flex;

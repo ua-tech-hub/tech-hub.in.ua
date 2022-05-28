@@ -11,3 +11,12 @@ definePageMeta({
     <ContentDoc />
   </main>
 </template>
+
+<style scoped>
+main {
+  max-width: 55rem;
+  margin: 0 auto;
+  background: white;
+  padding: 1rem;
+}
+</style>
