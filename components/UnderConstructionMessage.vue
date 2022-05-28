@@ -23,4 +23,18 @@
   opacity: 0.5;
   text-decoration: none;
 }
+
+main {
+  font-size: 26px;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+
+
+  max-width: 50rem;
+  padding: 2rem;
+  margin: auto;
+}
 </style>
