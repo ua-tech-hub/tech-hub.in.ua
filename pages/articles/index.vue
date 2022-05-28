@@ -1,39 +1,32 @@
 <script setup lang="ts">
-import { queryContent, ref, useAsyncData, watch } from "#imports";
+import { definePageMeta, queryContent, ref, useAsyncData, watch } from "#imports";
 
-const skip = ref(2)
-const limit = ref(2)
+definePageMeta({
+  layout: 'base-layout'
+})
 
-const {data: articles, refresh} = await useAsyncData(
+
+
+const {data: articles} = await useAsyncData(
     'home',
     () => queryContent('/')
         .only(['title', 'description', '_path'])
-        .skip(skip.value)
-        .limit(limit.value)
         .find(),
 );
-
-watch([skip, limit], () => {
-  refresh()
-})
 
 </script>
 
 <template>
-<main>
-  <label for="skip">Skip ({{ skip }})</label>
-  <input id="skip" v-model="skip" type="range" min="0" max="5">
-  <label for="skip">Limit ({{ limit }})</label>
-  <input id="limit" v-model="limit" type="range" min="1" max="5">
-  <article
-    v-for="article of articles"
-    :key="article._path"
-  >
-    <h2>{{article.title}}</h2>
-    <div v-if="article.description">{{article.description}}</div>
-    <nuxt-link :to="article._path">go</nuxt-link>
-  </article>
-</main>
+  <main>
+    <article
+        v-for="article of articles"
+        :key="article._path"
+    >
+      <h2>{{article.title}}</h2>
+      <div v-if="article.description">{{article.description}}</div>
+      <nuxt-link :to="article._path">go</nuxt-link>
+    </article>
+  </main>
 </template>
 
 <style scoped>
