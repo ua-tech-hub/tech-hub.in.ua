@@ -7,16 +7,20 @@ definePageMeta({
 </script>
 <template>
   <main>
-    <article>
-      <ContentDoc v-slot="{ doc }">
+    <ContentDoc v-slot="{ doc }">
+      <article>
         <article-head
           :date="doc.date"
           :title="doc.title"
           :path="doc._path"
         />
         <ContentRenderer :value="doc"/>
-      </ContentDoc>
-    </article>
+      </article>
+
+      <section>
+        <a :href="'/admin/#/collections/article/search/' + doc.title">Виправити цю статтю</a>
+      </section>
+    </ContentDoc>
 
   </main>
 </template>
@@ -29,6 +33,9 @@ article, section {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   max-width: 55rem;
   margin: 0 auto;
 }
