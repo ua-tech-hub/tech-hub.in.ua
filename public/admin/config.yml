@@ -3,13 +3,10 @@ backend:
   repo: ua-tech-hub/tech-hub.in.ua
   branch: main
   open_authoring: true
-
 locale: uk
 publish_mode: editorial_workflow
-
-media_folder: "public/images/uploads" # Media files will be stored in the repo under static/images/uploads
-public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
-
+media_folder: public/images/uploads
+public_folder: "/images/uploads"
 collections:
   - name: article
     label: Статті
@@ -17,12 +14,36 @@ collections:
     folder: content/articles
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields: # The fields for each document, usually in front matter
-#      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
-      - { label: "Заголовок", name: "title", widget: "string" }
-      - { label: "Дата написання", name: "date", widget: "datetime" }
-#      - { label: "Featured Image", name: "thumbnail", widget: "image" }
-#      - { label: "Rating (scale of 1-5)", name: "rating", widget: "number" }
-      - { label: "Текст", name: "body", widget: "markdown" }
-
-
+    preview_path: articles/{{slug}}
+    fields:
+      - label: Автор
+        name: author
+        hint: GitHub логін автора статті
+        widget: string
+      - label: Заголовок
+        name: title
+        widget: string
+      - label: Дата написання
+        name: date
+        widget: datetime
+      - label: Теги
+        name: tags
+        widget: select
+        multiple: true
+        min: 1
+        options:
+          - HTML
+          - CSS
+          - JavaScript
+          - TypeScript
+          - Браузерні розширення
+          - Electron
+          - Vue
+          - WordPress
+          - Алгоритми
+          - Чат-боти
+          - Deno
+          - Accessibility
+      - label: Текст
+        name: body
+        widget: markdown

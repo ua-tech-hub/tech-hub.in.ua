@@ -13,6 +13,7 @@ definePageMeta({
           :date="doc.date"
           :title="doc.title"
           :path="doc._path"
+          :tags="doc.tags"
         />
         <ContentRenderer :value="doc"/>
       </article>

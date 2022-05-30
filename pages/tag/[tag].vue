@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { definePageMeta, queryContent, ref, useAsyncData, watch } from "#imports";
-import ArticleFeed from "~/components/ArticleFeed.vue";
+import { definePageMeta } from "#imports";
 
 definePageMeta({
   layout: 'base-layout',
@@ -10,7 +9,7 @@ definePageMeta({
 
 <template>
   <main>
-    <article-feed/>
+    <article-feed :where="{tags: {$contains: $route.params.tag}}"/>
   </main>
 </template>
 

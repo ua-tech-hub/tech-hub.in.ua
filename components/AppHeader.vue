@@ -1,18 +1,31 @@
 <script lang="ts" setup>
 // TODO: Якимось чином формувати список категорій
-const categories = []
+const tags = [
+  'HTML',
+  'CSS',
+  'JavaScript',
+  'TypeScript',
+  'Браузерні розширення',
+  'Electron',
+  'Vue',
+  'WordPress',
+  'Алгоритми',
+  'Чат-боти',
+  'Deno',
+  'Accessibility',
+];
 </script>
 
 <template>
   <header>
     <h1>
-      <nuxt-link to="/">Хаб</nuxt-link>
+      <nuxt-link to="/articles">🇺🇦 Хаб</nuxt-link>
     </h1>
     <input type="checkbox" aria-label="Перемкнути меню категорій">
     <nav>
-      <ul v-if="categories.length">
-        <li v-for="cat of categories" :key="cat">
-          <nuxt-link to="/">{{cat}}</nuxt-link>
+      <ul v-if="tags.length">
+        <li v-for="tag of tags" :key="tag">
+          <nuxt-link :to="'/tag/' + tag ">#{{ tag }}</nuxt-link>
         </li>
       </ul>
     </nav>
