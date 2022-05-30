@@ -39,6 +39,7 @@ header {
   padding: 1rem;
 
   display: grid;
+  align-items: center;
   grid-auto-columns: 1fr;
   grid-template-columns: 1fr auto;
   grid-template-rows: repeat(2, min-content);
@@ -64,7 +65,7 @@ a:not(:hover, :focus-visible) {
 input[type="checkbox"] {
   grid-area: toggler;
   appearance: none;
-  width: 38px;
+  width: 43px;
   height: 100%;
   border: 1px solid;
   border-radius: 5px;
