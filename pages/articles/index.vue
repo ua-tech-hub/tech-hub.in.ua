@@ -6,7 +6,7 @@ definePageMeta({
 });
 
 
-const {data: articles} = await useAsyncData(
+const {data: articles, pending} = await useAsyncData(
   'home',
   () => queryContent('/articles')
     .sort({
@@ -19,18 +19,11 @@ const {data: articles} = await useAsyncData(
 </script>
 
 <template>
-  <main>
-    <article
+  <main role="feed" :aria-busy="pending">
+    <article-feed-item
       v-for="article of articles"
-      :key="article._path"
-    >
-      <h2>
-        <nuxt-link :to="article._path">{{ article.title }}</nuxt-link>
-      </h2>
-      {{article.date}}
-      <p v-if="article.description">{{ article.description }}</p>
-      <nuxt-link :to="article._path">Почати читання</nuxt-link>
-    </article>
+      :article="article"
+    />
   </main>
 </template>
 
@@ -53,6 +46,7 @@ h2:first-child {
 h2 a {
   color: inherit;
 }
+
 h2 a:not(:hover, :focus-visible) {
   text-decoration: none;
 }
