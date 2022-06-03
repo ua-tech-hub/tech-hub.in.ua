@@ -1,10 +1,8 @@
 ---
 title: Неудачный опыт миграции Electron приложения на ECMAScript модули
-description:
-date: 2021-02-26
+date: 2020-10-02
 tags:
 - Electron
-layout: layouts/post.njk
 ---
 
 Работая над своим стартовым шаблоном для Electron приложений я решил полностью отказаться от CommonJS модулей и использовать исключительно ECMAScript модули (далее ES модули или ESM).

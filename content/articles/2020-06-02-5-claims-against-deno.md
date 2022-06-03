@@ -1,10 +1,7 @@
 ---
 title: 5 претензий к Deno
-description:
 date: 2020-06-02
-layout: layouts/post.njk
 tags:
-
 - Deno
 
 ---

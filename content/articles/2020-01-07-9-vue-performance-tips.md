@@ -1,10 +1,7 @@
 ---
 title: 9 советов по повышению производительности Vue
-description:
 date: 2020-01-07
-layout: layouts/post.njk
 tags:
-
 - Vue
 
 ---
